@@ -5,7 +5,6 @@ app.get('/', (req, res) => {
   res.send('Servidor funcionando!');
 });
 
-
 app.listen(3000, () => {
   console.log('Servidor rodando em httlocalhostp://:3000');
 });
