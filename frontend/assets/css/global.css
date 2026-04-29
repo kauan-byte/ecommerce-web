@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #915ae9, #000000);
+}
+
+/* Navbar estilo marketplace */
+.navbar{
+background:#781ecc;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-weight:bold;
+}
+
+.container{
+max-width:900px;
+margin:40px auto;
+padding:20px;
+}
+
+/* Estilo do botão de login */
+.btn{
+  width: 100%;
+  padding: 12px;
+  background: #25088f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/*efeito hover botão de login*/
+.btn:hover {
+  font-size: 17px;
+  background-color: rgb(19, 12, 65);
+  box-shadow: 0px 0px 15px rgba(5, 5, 5, 0.2);
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #4b1b8a;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+
+.card{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+/*efeito de foco nos campos de entrada*/
+.login-box input :focus {
+  border-color: #4b1b8a;
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(67, 11, 112, 0.5);
+}
+
+
+
+
