@@ -14,11 +14,11 @@ exports.createUser = (user, callback) => {
 
 exports.update = (email, user, callback) => {
   const sql = "UPDATE users SET name=?, email=?, password=? WHERE email=?";
-  db.query(sql, [user.name, user.email, user.password, id], callback);
+  db.query(sql, [user.name, user.email, user.password, user.email], callback);
 };
 
 exports.delete = (email, callback) => {
-  db.query("DELETE FROM users WHERE id=?", [email], callback);
+  db.query("DELETE FROM users WHERE email=?", [email], callback);
 };
 
 exports.findByEmail = (email, callback) => {

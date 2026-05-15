@@ -1,6 +1,7 @@
 const token = localStorage.getItem("token");
 
 async function register() {
+  console.log("dentro do register");
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -20,6 +21,7 @@ async function loadProfile() {
   const user = await res.json();
   document.getElementById("name").value = user.name;
   document.getElementById("email").value = user.email;
+  document.getElementById("password").value = user.password;
 }
 
 async function updateUser() {
@@ -46,7 +48,7 @@ async function deleteUser() {
   const data = await res.json();
   alert(data.message);
   localStorage.removeItem("token");
-  window.location.href = "index.html";
+  window.location.href = "login.html";
 }
 
 loadProfile();

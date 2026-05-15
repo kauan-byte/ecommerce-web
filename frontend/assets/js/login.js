@@ -36,9 +36,9 @@ async function login() {
     localStorage.setItem("role", data.role);
     alert("login bem-sucedido!");
     if (data.role === "admin") {
-      window.location.href = "dashboard-adm.html";
+      window.location.href = "profile.html";
     } else {
-      window.location.href = "dashboard-cli.html";
+      window.location.href = "profile.html";
     }
   } else {
     alert("Erro do login: " + data.message);
