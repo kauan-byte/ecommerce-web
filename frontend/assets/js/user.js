@@ -19,22 +19,27 @@ async function loadProfile() {
     headers: { authorization: token },
   });
   const user = await res.json();
-  document.getElementById("name").value = user.name;
+  document.getElementById("nomeCompleto").value = user.nomeCompleto;
+  document.getElementById("nomeUsuario").value = user.nomeUsuario;
   document.getElementById("email").value = user.email;
-  document.getElementById("password").value = user.password;
+  document.getElementById("cpf").value = user.cpf;
+  document.getElementById("senha").value = user.senha;
 }
 
 async function updateUser() {
-  const name = document.getElementById("name").value;
+  const nomeCompleto = document.getElementById("nomeCompleto").value;
+  const nomeUsuario = document.getElementById("nomeUsuario").value;
   const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  const senha = document.getElementById("senha").value;
+  const cpf = document.getElementById("cpf").value;
+  const role = "cliente";
   const res = await fetch("http://localhost:3000/api/users/update", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
       authorization: token,
     },
-    body: JSON.stringify({ name, email, password }),
+    body: JSON.stringify({ nomeCompleto, nomeUsuario, email, senha, cpf, role }),
   });
   const data = await res.json();
   alert(data.message);

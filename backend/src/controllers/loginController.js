@@ -12,7 +12,7 @@ exports.login = async (req, res) => {
         message: "Usuário não encontrado",
       });
     }
-    if (user.password !== password) {
+    if (user.senha !== password) {
       return res.status(401).json({
         message: "Senha incorreta",
       });

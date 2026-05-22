@@ -5,3 +5,7 @@ margin-top:10px;
 .delete:hover{
 background:#cc0000;
 }
+h2{
+  margin-bottom: 10px;
+  color: #767373;
+}
