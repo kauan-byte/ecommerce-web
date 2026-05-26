@@ -24,6 +24,7 @@ async function loadProfile() {
   document.getElementById("email").value = user.email;
   document.getElementById("cpf").value = user.cpf;
   document.getElementById("senha").value = user.senha;
+  document.getElementById("role").value = user.role;
 }
 
 async function updateUser() {
@@ -32,7 +33,7 @@ async function updateUser() {
   const email = document.getElementById("email").value;
   const senha = document.getElementById("senha").value;
   const cpf = document.getElementById("cpf").value;
-  const role = "cliente";
+  const role = document.getElementById("role").value;
   const res = await fetch("http://localhost:3000/api/users/update", {
     method: "PUT",
     headers: {
