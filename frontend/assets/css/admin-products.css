@@ -1,0 +1,80 @@
+.table-container {
+  max-width: 1200px;
+
+  margin: 30px auto;
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 15px;
+
+  border-bottom: 1px solid #ddd;
+
+  text-align: left;
+}
+
+th {
+  background: #ffe600;
+}
+
+td img {
+  width: 70px;
+
+  border-radius: 5px;
+}
+
+.edit-btn {
+  background: #3483fa;
+
+  color: white;
+
+  border: none;
+
+  padding: 8px 12px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: #ff4d4f;
+
+  color: white;
+
+  border: none;
+
+  padding: 8px 12px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  margin-left: 5px;
+}
+
+.new-btn {
+  background: #3483fa;
+
+  color: white;
+
+  padding: 10px 15px;
+
+  border-radius: 6px;
+
+  text-decoration: none;
+}

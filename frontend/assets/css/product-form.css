@@ -1,0 +1,13 @@
+textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.card {
+  max-width: 500px;
+}
+
+select {
+  appearance: none;
+  background: white;
+}

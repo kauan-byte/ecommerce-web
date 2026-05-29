@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Produto</title>
+
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/product-form.css" />
+  </head>
+
+  <body>
+    <div class="navbar">
+      <span>🛒 Painel Admin</span>
+    </div>
+
+    <div class="container">
+      <div class="card">
+        <h2>Produto</h2>
+
+        <input class="input" id="nome" placeholder="Nome" />
+
+        <textarea
+          class="input"
+          id="descricao"
+          placeholder="Descrição"
+        ></textarea>
+
+        <select class="input" id="categoria">
+          <option value="">Selecione uma categoria</option>
+
+          <option value="Eletrônicos">Eletrônicos</option>
+
+          <option value="Informática">Informática</option>
+
+          <option value="Roupas">Roupas</option>
+
+          <option value="Livros">Livros</option>
+
+          <option value="Jogos">Jogos</option>
+
+          <option value="Celulares">Celulares</option>
+        </select>
+
+        <input class="input" id="preco" placeholder="Preço" />
+
+        <input class="input" id="quantidade" placeholder="Quantidade" />
+
+        <input class="input" id="imagem" placeholder="URL da imagem" />
+
+        <button class="btn" onclick="saveProduct()">Salvar Produto</button>
+      </div>
+    </div>
+
+    <script src="assets/js/products.js"></script>
+  </body>
+</html>
