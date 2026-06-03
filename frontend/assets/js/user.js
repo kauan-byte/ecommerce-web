@@ -1,14 +1,23 @@
 const token = localStorage.getItem("token");
 
 async function register() {
-  console.log("dentro do register");
-  const name = document.getElementById("name").value;
+  const nomeCompleto = document.getElementById("nomeCompleto").value;
+  const nomeUsuario = document.getElementById("nomeUsuario").value;
   const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  const cpf = document.getElementById("cpf").value;
+  const senha = document.getElementById("senha").value;
+  const role = document.getElementById("role").value;
   const res = await fetch("http://localhost:3000/api/users/register", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name, email, password }),
+    body: JSON.stringify({
+      nomeCompleto,
+      nomeUsuario,
+      email,
+      cpf,
+      senha,
+      role,
+    }),
   });
   const data = await res.json();
   alert(data.message);
@@ -40,7 +49,14 @@ async function updateUser() {
       "Content-Type": "application/json",
       authorization: token,
     },
-    body: JSON.stringify({ nomeCompleto, nomeUsuario, email, senha, cpf, role }),
+    body: JSON.stringify({
+      nomeCompleto,
+      nomeUsuario,
+      email,
+      senha,
+      cpf,
+      role,
+    }),
   });
   const data = await res.json();
   alert(data.message);

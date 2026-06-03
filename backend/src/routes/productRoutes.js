@@ -4,6 +4,8 @@ const router = express.Router();
 
 const controller = require("../controllers/productController");
 
+const upload = require("../middleware/uploadMiddleware");
+
 router.get("/", controller.getAll);
 
 router.get("/:id", controller.getById);
@@ -13,5 +15,7 @@ router.post("/", controller.create);
 router.put("/:id", controller.update);
 
 router.delete("/:id", controller.delete);
+
+router.post("/upload", upload.single("imagem"), controller.uploadImage);
 
 module.exports = router;

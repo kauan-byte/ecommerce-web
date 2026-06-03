@@ -1,5 +1,7 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
+
 const loginRoutes = require("./src/routes/loginRoutes");
 const userRoutes = require("./src/routes/userRoutes");
 const productRoutes = require("./src/routes/productRoutes");
@@ -9,6 +11,7 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/login", loginRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);

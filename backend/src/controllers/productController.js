@@ -65,3 +65,15 @@ exports.delete = (req, res) => {
     });
   });
 };
+
+exports.uploadImage = (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({
+      message: "Nenhuma imagem enviada",
+    });
+  }
+
+  res.json({
+    imageUrl: `http://localhost:3000/uploads/${req.file.filename}`,
+  });
+};
