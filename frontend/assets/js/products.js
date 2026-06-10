@@ -105,6 +105,14 @@ async function loadAdminProducts() {
 // CADASTRAR / EDITAR
 
 async function saveProduct() {
+  let imageUrl = "";
+
+  const imageField = document.getElementById("imagem");
+
+  if (imageField && imageField.files.length > 0) {
+    imageUrl = await uploadImage();
+  }
+
   const produto = {
     nome: document.getElementById("nome").value,
 
@@ -116,14 +124,16 @@ async function saveProduct() {
 
     quantidade: document.getElementById("quantidade").value,
 
-    imagem: document.getElementById("imagem").value,
+    imagem: imageUrl,
   };
 
   let url = API;
+
   let method = "POST";
 
   if (productId) {
     url = `${API}/${productId}`;
+
     method = "PUT";
   }
 
@@ -163,7 +173,13 @@ async function loadProduct() {
 
   document.getElementById("quantidade").value = product.quantidade;
 
-  document.getElementById("imagem").value = product.imagem;
+  const preview = document.getElementById("preview");
+
+  if (product.imagem) {
+    preview.src = product.imagem;
+
+    preview.style.display = "block";
+  }
 }
 
 // EDITAR
@@ -188,6 +204,48 @@ async function deleteProduct(id) {
   alert(data.message);
 
   loadAdminProducts();
+}
+
+const imageInput = document.getElementById("imagem");
+
+if (imageInput) {
+  imageInput.addEventListener("change", function () {
+    const file = this.files[0];
+
+    if (!file) return;
+
+    const preview = document.getElementById("preview");
+
+    preview.src = URL.createObjectURL(file);
+
+    preview.style.display = "block";
+  });
+}
+
+async function uploadImage() {
+  const imageFile = document.getElementById("imagem").files[0];
+
+  if (!imageFile) {
+    return "";
+  }
+
+  const formData = new FormData();
+
+  formData.append("imagem", imageFile);
+
+  const response = await fetch(
+    "http://localhost:3000/api/products/upload",
+
+    {
+      method: "POST",
+
+      body: formData,
+    },
+  );
+
+  const data = await response.json();
+
+  return data.imageUrl;
 }
 
 // AUTOLOAD

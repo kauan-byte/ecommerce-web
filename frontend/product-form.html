@@ -46,7 +46,19 @@
 
         <input class="input" id="quantidade" placeholder="Quantidade" />
 
-        <input class="input" id="imagem" placeholder="URL da imagem" />
+        <label>Imagem do Produto</label>
+
+        <input class="input" type="file" id="imagem" accept="image/*" />
+
+        <img
+          id="preview"
+          style="
+            width: 200px;
+            margin-top: 10px;
+            display: none;
+            border-radius: 8px;
+          "
+        />
 
         <button class="btn" onclick="saveProduct()">Salvar Produto</button>
       </div>

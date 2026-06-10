@@ -12,10 +12,10 @@ router.get("/:id", controller.getById);
 
 router.post("/", controller.create);
 
+router.post("/upload", upload.single("imagem"), controller.uploadImage);
+
 router.put("/:id", controller.update);
 
 router.delete("/:id", controller.delete);
-
-router.post("/upload", upload.single("imagem"), controller.uploadImage);
 
 module.exports = router;
