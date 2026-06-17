@@ -128,7 +128,6 @@ async function saveProduct() {
   };
 
   let url = API;
-
   let method = "POST";
 
   if (productId) {
@@ -137,15 +136,19 @@ async function saveProduct() {
     method = "PUT";
   }
 
-  const response = await fetch(url, {
-    method,
+  const response = await fetch(
+    url,
 
-    headers: {
-      "Content-Type": "application/json",
+    {
+      method,
+
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify(produto),
     },
-
-    body: JSON.stringify(produto),
-  });
+  );
 
   const data = await response.json();
 
@@ -223,15 +226,15 @@ if (imageInput) {
 }
 
 async function uploadImage() {
-  const imageFile = document.getElementById("imagem").files[0];
+  const file = document.getElementById("imagem").files[0];
 
-  if (!imageFile) {
+  if (!file) {
     return "";
   }
 
   const formData = new FormData();
 
-  formData.append("imagem", imageFile);
+  formData.append("imagem", file);
 
   const response = await fetch(
     "http://localhost:3000/api/products/upload",
